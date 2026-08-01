@@ -178,7 +178,7 @@ FAST_MCP_PORT=9000
 ```
 * Exemplo das configuraçoes do arquivo .env
 
-   ![.env](docs/imagens/1.png)
+   ![.env](src/imagens/1.png)
   
 ---
 
@@ -206,7 +206,7 @@ Adicione ao arquivo `C:\Users\<SeuUsuario>\.gemini\config\mcp_config.json`:
 
    * imagem de Exemplo de configuração mcp_config.json para o Antigravity IDE
 
-   ![Configuração mcp_config.json na Antigravity IDE](docs/imagens/2.png)
+   ![Configuração mcp_config.json na Antigravity IDE](src/imagens/2.png)
 
 ### LM Studio / Claude Desktop
 
@@ -225,7 +225,7 @@ Adicione ao arquivo `C:\Users\<SeuUsuario>\.gemini\config\mcp_config.json`:
 
 * imagem de Exemplo de configuração mcp_config.json para o LM Studio
    
-   ![Configuração mcpServers no LM Studio](docs/imagens/2.png)
+   ![Configuração mcpServers no LM Studio](src/imagens/2.png)
 
 ### ChatGPT Codex
 
