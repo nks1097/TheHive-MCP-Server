@@ -147,18 +147,52 @@ pip install -r requirements.txt
 cp .env.example .env
 python start_mcp.py
 ```
+### Configurar as variaveis de ambiente
 
+Edite o arquivo .env com os dados da sua infraestrutura:
+
+```env
+# TheHive Credenciais
+THEHIVE_URL=ALTERE_SUA_URL
+THEHIVE_API_KEY=ALTERE_SUA_API_KEY
+
+# Cortex Credenciais (se no caso vc precisar usar)
+CORTEX_URL=ALTERE_SUA_URL
+CORTEX_API_KEY=ALTERE_SUA_API_KEY
+
+# MISP Credentials (se no caso vc precisar usar)
+MISP_URL=ALTERE_SUA_URL
+MISP_API_KEY=ALTERE_SUA_API_KEY
+MISP_VERIFY_SSL=false
+
+# SSH para o Docker Host (for TheHive, Cortex, MISP) (se no caso vc precisar usar)
+DOCKER_HOST_SSH_IP=ALTERE_SUA_URL
+DOCKER_HOST_SSH_PORT=22
+DOCKER_HOST_SSH_USER=ALTERE_SEU_USUARIO
+DOCKER_HOST_SSH_PASS=ALTERE_SUA_SENHA
+
+# App Settings
+LOG_LEVEL=INFO
+FAST_MCP_NAME=TheHive-MCP-Server
+FAST_MCP_PORT=9000
+```
+* Exemplo das configuraçoes do arquivo .env
+
+   ![.env](docs/imagens/1.png)
+  
 ---
 
 ## 🔌 Antigravity IDE (`mcp_config.json`)
 
+Adicione ao arquivo `C:\Users\<SeuUsuario>\.gemini\config\mcp_config.json`:
+
 ```json
 {
   "mcpServers": {
-    "thehive": {
-      "command": "C:\\Users\\Natanael Krindges\\.gemini\\antigravity\\scratch\\MCP WAZUH - THE HIVE - CORTEX - MISP\\TheHive_Servidor_MCP\\.venv\\Scripts\\python.exe",
+    "soc-mcp-server": {
+      "command": "C:\\Caminho\\Para\\TheHive-MCP-Server\\.venv\\Scripts\\python.exe",
       "args": [
-        "C:\\Users\\Natanael Krindges\\.gemini\\antigravity\\scratch\\MCP WAZUH - THE HIVE - CORTEX - MISP\\TheHive_Servidor_MCP\\TheHive_Servidor_MCP\\start_mcp.py"
+        "C:\\Caminho\\Para\\TheHive-MCP-Server\\start_mcp.py"
       ],
       "env": {
         "FASTMCP_LOG_LEVEL": "CRITICAL",
@@ -169,6 +203,51 @@ python start_mcp.py
   }
 }
 ```
+
+   * imagem de Exemplo de configuração mcp_config.json para o Antigravity IDE
+
+   ![Configuração mcp_config.json na Antigravity IDE](docs/imagens/config_antigravity_json.png)
+
+### LM Studio / Claude Desktop
+
+```json
+{
+  "mcpServers": {
+    "soc-mcp-server": {
+      "command": "C:\\Caminho\\Para\\TheHive-MCP-Server\\.venv\\Scripts\\python.exe",
+      "args": [
+        "C:\\Caminho\\Para\\TheHive-MCP-Server\\start_mcp.py"
+      ]
+    }
+  }
+}
+```
+
+* imagem de Exemplo de configuração mcp_config.json para o LM Studio
+   
+   ![Configuração mcpServers no LM Studio](docs/imagens/2.png)
+
+### ChatGPT Codex
+
+Adicione ao arquivo `C:\Users\<SeuUsuario>\.codex\config.toml`:
+
+```json
+[mcp_servers.soc-ai]
+command = "C:\\Caminho\\Para\\TheHive-MCP-Server\\.venv\\Scripts\\python.exe"
+args = [
+  "C:\\Caminho\\Para\\TheHive-MCP-Server\\start_mcp.py",
+]
+
+```
+
+* imagem de Exemplo de configuração mcp_config.json para o codex
+   
+   ![Configuração config.toml no ChatGPT Codex](docs/imagens/3.png)
+
+---
+### VIDEO DE CONFIGURAÇÃO DE FORMA SIMPLIFICADA USANDO GRATUITAMENTE LLM LOCAL COM LM STUDIO
+
+ ▶️ **[Clique aqui para assistir ao vídeo completo no Google Drive Assiste em Full Hd (1080P)](https://drive.google.com/file/d/1oq8Xt84Gb8irlTWp1CeNMNZEGyv1a59w/view?usp=drive_link)**
 
 ---
 
