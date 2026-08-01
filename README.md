@@ -8,7 +8,7 @@
 
 ---
 
-## 🛠️ Catálogo Completo de Ferramentas MCP (69 Tools)
+## 🛠️ Catálogo Completo de Ferramentas MCP (70 Tools)
 
 ### 📁 1. Gestão de Casos e Investigações (15 Tools)
 
@@ -175,3 +175,37 @@ python start_mcp.py
 ## 📜 Licença
 
 Distribuído sob a licença **Apache 2.0**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+## 📂 Estrutura do Projeto
+
+```text
+TheHive-MCP-Server/
+├── src/
+│   ├── config/
+│   │   └── settings.py          # Configurações globais e variáveis de ambiente
+│   ├── core/
+│   │   └── http_client.py       # Cliente HTTP assíncrono (httpx) com tratamento de erros
+│   ├── integrations/
+│   │   ├── cortex/
+│   │   │   └── client.py        # Cliente de integração com Cortex (Analyzers/Responders/Jobs)
+│   │   ├── misp/
+│   │   │   └── client.py        # Cliente de integração com MISP CTI
+│   │   └── thehive/
+│   │       └── client.py        # Cliente completo da API REST do TheHive 5
+│   ├── tools/
+│   │   ├── server.py            # Instanciação da aplicação FastMCP (TheHive-MCP-Server)
+│   │   └── thehive_tools.py     # Registro decorado de todas as 70 ferramentas MCP
+│   ├── utils/
+│   │   └── logger.py            # Logger estruturado Loguru
+│   └── main.py                  # Ponto de entrada do servidor FastMCP
+├── logs/                        # Logs de execução da aplicação
+├── .env.example                 # Modelo de variáveis de ambiente com dados sanitizados
+├── .gitignore                   # Regras de exclusão do Git
+├── LICENSE                      # Licença de uso Apache 2.0
+├── README.md                    # Documentação técnica oficial e catálogo de ferramentas
+├── pyproject.toml               # Metadados do projeto Python
+├── requirements.txt             # Dependências diretas do projeto
+└── start_mcp.py                 # Script de inicialização stdio para clientes MCP
+```
