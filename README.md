@@ -81,16 +81,16 @@
 
 | Nº | Ferramenta MCP | Descrição Operacional |
 | :---: | :--- | :--- |
-| **39** | `listar_analyzers_cortex` | Lista analisadores disponíveis (VirusTotal, Shodan, etc.). |
-| **40** | `listar_analisadores_cortex` | Alias para listagem de motores de análise disponíveis. |
-| **41** | `executar_analyzer_cortex` | Executa um analisador do Cortex em um observável e aguarda relatório. |
-| **42** | `executar_analise_cortex` | Submete observável para análise automatizada no Cortex. |
-| **43** | `listar_jobs_analyzer` | Lista jobs de análise em andamento ou concluídos no Cortex. |
-| **44** | `listar_jobs_cortex` | Lista histórico de execuções de jobs no Cortex. |
-| **45** | `obter_resultado_analyzer` | Obtém o relatório/resultado final de um job de análise. |
-| **46** | `cancelar_job_cortex` | Cancela um job de análise em execução no Cortex. |
-| **47** | `listar_responders_cortex` | Lista os responders de resposta ativa disponíveis. |
-| **48** | `executar_responder_cortex` | Executa uma ação de resposta ativa no Cortex. |
+| **40** | `listar_analyzers_cortex` | Lista analisadores disponíveis (VirusTotal, Shodan, etc.). |
+| **41** | `listar_analisadores_cortex` | Alias para listagem de motores de análise disponíveis. |
+| **42** | `executar_analyzer_cortex` | Executa um analisador do Cortex em um observável e aguarda relatório. |
+| **43** | `executar_analise_cortex` | Submete observável para análise automatizada no Cortex. |
+| **44** | `listar_jobs_analyzer` | Lista jobs de análise em andamento ou concluídos no Cortex. |
+| **45** | `listar_jobs_cortex` | Lista histórico de execuções de jobs no Cortex. |
+| **46** | `obter_resultado_analyzer` | Obtém o relatório/resultado final de um job de análise. |
+| **47** | `cancelar_job_cortex` | Cancela um job de análise em execução no Cortex. |
+| **48** | `listar_responders_cortex` | Lista os responders de resposta ativa disponíveis. |
+| **49** | `executar_responder_cortex` | Executa uma ação de resposta ativa no Cortex. |
 
 ---
 
@@ -98,12 +98,12 @@
 
 | Nº | Ferramenta MCP | Descrição Operacional |
 | :---: | :--- | :--- |
-| **49** | `buscar_evento_misp` | Pesquisa eventos e IOCs na inteligência de ameaças do MISP. |
-| **50** | `buscar_misp` | Consulta genérica de IOC no MISP. |
-| **51** | `importar_evento_misp` | Importa os detalhes de um evento do MISP para investigação. |
-| **52** | `exportar_caso_misp` | Exporta e cria um evento de ameaça no MISP com base no caso. |
-| **53** | `publicar_evento_misp` | Publica um novo evento no MISP. |
-| **54** | `sincronizar_iocs_misp` | Sincroniza observáveis do caso com a base CTI do MISP. |
+| **50** | `buscar_evento_misp` | Pesquisa eventos e IOCs na inteligência de ameaças do MISP. |
+| **51** | `buscar_misp` | Consulta genérica de IOC no MISP. |
+| **52** | `importar_evento_misp` | Importa os detalhes de um evento do MISP para investigação. |
+| **53** | `exportar_caso_misp` | Exporta e cria um evento de ameaça no MISP com base no caso. |
+| **54** | `publicar_evento_misp` | Publica um novo evento no MISP. |
+| **55** | `sincronizar_iocs_misp` | Sincroniza observáveis do caso com a base CTI do MISP. |
 
 ---
 
@@ -111,16 +111,16 @@
 
 | Nº | Ferramenta MCP | Descrição Operacional |
 | :---: | :--- | :--- |
-| **55** | `listar_case_templates_thehive` | Lista os modelos/templates de casos cadastrados no TheHive. |
-| **56** | `criar_caso_template_thehive` | Cria um caso baseado em um template pré-definido. |
-| **57** | `listar_organizacoes_thehive` | Lista as organizações cadastradas na instância do TheHive. |
-| **58** | `listar_usuarios_thehive` | Lista os usuários registrados no TheHive. |
-| **59** | `listar_tags_thehive` | Lista todas as tags existentes usadas em casos e alertas. |
-| **60** | `listar_taxonomias_thehive` | Lista as taxonomias disponíveis no TheHive. |
-| **61** | `adicionar_taxonomia_caso_thehive` | Adiciona uma taxonomia (ex: veredito, categoria) a um caso. |
-| **62** | `listar_custom_fields_thehive` | Lista os campos personalizados (Custom Fields) definidos. |
-| **63** | `atualizar_custom_field_thehive` | Atualiza o valor de um campo personalizado em um caso. |
-| **64** | `buscar_similares_thehive` | Busca casos semelhantes que compartilham dos mesmos IOCs. |
+| **56** | `listar_case_templates_thehive` | Lista os modelos/templates de casos cadastrados no TheHive. |
+| **57** | `criar_caso_template_thehive` | Cria um caso baseado em um template pré-definido. |
+| **58** | `listar_organizacoes_thehive` | Lista as organizações cadastradas na instância do TheHive. |
+| **59** | `listar_usuarios_thehive` | Lista os usuários registrados no TheHive. |
+| **60** | `listar_tags_thehive` | Lista todas as tags existentes usadas em casos e alertas. |
+| **61** | `listar_taxonomias_thehive` | Lista as taxonomias disponíveis no TheHive. |
+| **62** | `adicionar_taxonomia_caso_thehive` | Adiciona uma taxonomia (ex: veredito, categoria) a um caso. |
+| **63** | `listar_custom_fields_thehive` | Lista os campos personalizados (Custom Fields) definidos. |
+| **64** | `atualizar_custom_field_thehive` | Atualiza o valor de um campo personalizado em um caso. |
+| **65** | `buscar_similares_thehive` | Busca casos semelhantes que compartilham dos mesmos IOCs. |
 
 ---
 
@@ -128,11 +128,11 @@
 
 | Nº | Ferramenta MCP | Descrição Operacional |
 | :---: | :--- | :--- |
-| **65** | `exportar_caso_thehive` | Exporta um caso completo com observáveis e tarefas em JSON. |
-| **66** | `importar_caso_thehive` | Importa um caso a partir de uma estrutura JSON. |
-| **67** | `estatisticas_thehive` | Exibe estatísticas (casos abertos, fechados, severidades). |
-| **68** | `healthcheck_thehive` | Verifica a saúde e conectividade com a API do TheHive. |
-| **69** | `versao_thehive` | Retorna as informações de versão do servidor TheHive. |
+| **66** | `exportar_caso_thehive` | Exporta um caso completo com observáveis e tarefas em JSON. |
+| **67** | `importar_caso_thehive` | Importa um caso a partir de uma estrutura JSON. |
+| **68** | `estatisticas_thehive` | Exibe estatísticas (casos abertos, fechados, severidades). |
+| **69** | `healthcheck_thehive` | Verifica a saúde e conectividade com a API do TheHive. |
+| **70** | `versao_thehive` | Retorna as informações de versão do servidor TheHive. |
 
 ---
 
