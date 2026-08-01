@@ -13,11 +13,29 @@ class TheHiveClient:
 
     # --- CASES ---
 
-    async def list_cases(self, limit: int = 10) -> List[Dict[str, Any]]:
+    async def list_cases(self, limit: int = 10, full_details: bool = False) -> List[Dict[str, Any]]:
         """List cases from TheHive ordered by creation date."""
         response = await self.client.get(f"/api/case?sort=-createdAt&limit={limit}")
         logger.info(f"Fetched {len(response)} cases from TheHive")
-        return response
+        if full_details or not isinstance(response, list):
+            return response
+
+        clean_list = []
+        for c in response:
+            clean_case = {
+                "_id": c.get("_id"),
+                "caseId": c.get("caseId"),
+                "title": c.get("title"),
+                "severity": c.get("severity"),
+                "status": c.get("status"),
+                "stage": c.get("stage"),
+                "owner": c.get("owner"),
+                "createdAt": c.get("createdAt"),
+                "tags": c.get("tags", []),
+                "summary": c.get("summary") or (c.get("description", "")[:120] + "..." if c.get("description") else "")
+            }
+            clean_list.append(clean_case)
+        return clean_list
 
     async def create_case(self, title: str, description: str, severity: int = 2, tags: List[str] = None, tlp: int = 2, pap: int = 2) -> Dict[str, Any]:
         """Create a new security incident case in TheHive."""
@@ -148,11 +166,30 @@ class TheHiveClient:
 
     # --- ALERTS ---
 
-    async def list_alerts(self, limit: int = 10) -> List[Dict[str, Any]]:
+    async def list_alerts(self, limit: int = 10, full_details: bool = False) -> List[Dict[str, Any]]:
         """List alerts from TheHive."""
         response = await self.client.get(f"/api/alert?sort=-createdAt&limit={limit}")
         logger.info(f"Fetched {len(response)} alerts from TheHive")
-        return response
+        if full_details or not isinstance(response, list):
+            return response
+
+        clean_list = []
+        for a in response:
+            clean_alert = {
+                "_id": a.get("_id"),
+                "title": a.get("title"),
+                "type": a.get("type"),
+                "source": a.get("source"),
+                "sourceRef": a.get("sourceRef"),
+                "severity": a.get("severity"),
+                "status": a.get("status"),
+                "stage": a.get("stage"),
+                "createdAt": a.get("createdAt"),
+                "tags": a.get("tags", []),
+                "description_snippet": (a.get("description", "")[:120] + "..." if a.get("description") else "")
+            }
+            clean_list.append(clean_alert)
+        return clean_list
 
     async def get_alert(self, alert_id: str) -> Dict[str, Any]:
         """Get a specific alert from TheHive by ID."""

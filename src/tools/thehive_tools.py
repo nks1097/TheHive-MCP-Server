@@ -38,10 +38,10 @@ async def criar_caso_thehive(title: str, description: str, severity: int = 2, ta
     return await client.create_case(title=title, description=description, severity=severity, tags=tags, tlp=tlp, pap=pap)
 
 @mcp.tool()
-async def listar_casos_thehive(limit: int = 10) -> List[Dict[str, Any]]:
-    """Lista os casos de incidentes mais recentes no TheHive."""
+async def listar_casos_thehive(limit: int = 10, full_details: bool = False) -> List[Dict[str, Any]]:
+    """Lista os casos de incidentes mais recentes no TheHive (retorna resumo compacto por padrão)."""
     client = get_thehive()
-    return await client.list_cases(limit=limit)
+    return await client.list_cases(limit=limit, full_details=full_details)
 
 @mcp.tool()
 async def obter_caso_thehive(case_id: str) -> Dict[str, Any]:
