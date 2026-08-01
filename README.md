@@ -206,7 +206,7 @@ Adicione ao arquivo `C:\Users\<SeuUsuario>\.gemini\config\mcp_config.json`:
 
    * imagem de Exemplo de configuração mcp_config.json para o Antigravity IDE
 
-   ![Configuração mcp_config.json na Antigravity IDE](docs/imagens/config_antigravity_json.png)
+   ![Configuração mcp_config.json na Antigravity IDE](docs/imagens/2.png)
 
 ### LM Studio / Claude Desktop
 
@@ -239,10 +239,6 @@ args = [
 ]
 
 ```
-
-* imagem de Exemplo de configuração mcp_config.json para o codex
-   
-   ![Configuração config.toml no ChatGPT Codex](docs/imagens/3.png)
 
 ---
 ### VIDEO DE CONFIGURAÇÃO DE FORMA SIMPLIFICADA USANDO GRATUITAMENTE LLM LOCAL COM LM STUDIO
