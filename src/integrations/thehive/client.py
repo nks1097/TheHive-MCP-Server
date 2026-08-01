@@ -370,9 +370,24 @@ class TheHiveClient:
         return response
 
     async def get_observables(self, case_id: str) -> List[Dict[str, Any]]:
-        """Get all observables attached to a case in TheHive."""
-        response = await self.client.get(f"/api/case/{case_id}/artifact")
-        return response
+        """Get all observables attached to a case in TheHive 5."""
+        query_body = {
+            "query": [
+                {"_name": "getCase", "idOrName": str(case_id)},
+                {"_name": "observables"}
+            ]
+        }
+        try:
+            response = await self.client.post("/api/v1/query", json=query_body)
+            logger.info(f"Fetched {len(response) if isinstance(response, list) else 0} observables for case {case_id}")
+            return response if isinstance(response, list) else []
+        except Exception as e:
+            logger.error(f"Failed to query observables for case {case_id}: {e}")
+            try:
+                # Fallback for older versions if query API fails
+                return await self.client.get(f"/api/case/{case_id}/artifact")
+            except Exception:
+                return []
 
     async def update_observable(self, obs_id: str, **kwargs) -> Dict[str, Any]:
         """Update an observable's tags, TLP, PAP, IOC flag, etc."""
