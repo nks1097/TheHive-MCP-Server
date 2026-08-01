@@ -243,7 +243,7 @@ args = [
 ---
 ### VIDEO DE CONFIGURAÇÃO DE FORMA SIMPLIFICADA USANDO GRATUITAMENTE LLM LOCAL COM LM STUDIO
 
- ▶️ **[Clique aqui para assistir ao vídeo completo no Google Drive Assiste em Full Hd (1080P)](https://drive.google.com/file/d/1oq8Xt84Gb8irlTWp1CeNMNZEGyv1a59w/view?usp=drive_link)**
+ ▶️ **[Clique aqui para assistir ao vídeo completo no Google Drive Assiste em Full Hd (1080P)](https://drive.google.com/file/d/1uPGnuxKeakxOBP8z16uBbroZm9yYbpJK/view?usp=drive_link)**
 
 ---
 
